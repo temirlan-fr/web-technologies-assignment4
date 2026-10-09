@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 2 - Bootstrap Contact Form</title>
+    <title>Task 3 - Bootstrap Validation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-success bg-opacity-10">
@@ -11,36 +11,58 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
 
-                <div class="bg-white p-4 rounded-4 shadow-sm">
-                    <h1 class="text-success fw-bold mb-2">Contact us</h1>
-                    <p class="text-secondary mb-4">Have a question? Leave us a message.</p>
+                <section class="bg-white p-4 rounded-4 shadow-sm mb-4">
+                    <h2 class="h4 mb-3">Validation style examples</h2>
+                    <p class="text-secondary">These fixed examples show Bootstrap validation classes.</p>
 
-                    <form>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="validExample" class="form-label">Valid email example</label>
+                            <input type="email" id="validExample" class="form-control is-valid" value="student@example.com" aria-describedby="validFeedback" readonly>
+                            <div id="validFeedback" class="valid-feedback">Looks good!</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="invalidExample" class="form-label">Invalid email example</label>
+                            <input type="email" id="invalidExample" class="form-control is-invalid" value="wrong-email" aria-describedby="invalidFeedback" aria-invalid="true" readonly>
+                            <div id="invalidFeedback" class="invalid-feedback">Enter a valid email address.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-white p-4 rounded-4 shadow-sm">
+                    <h1 class="text-success fw-bold mb-2">Contact us</h1>
+                    <p class="text-secondary mb-4">Fill in the form to test validation.</p>
+
+                    <form class="was-validated">
                         <div class="row g-4">
                             <div class="col-12 col-md-6">
                                 <label for="name" class="form-label fw-bold">Name</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Your name" aria-describedby="nameHelp" required minlength="2" maxlength="50">
-                                <div id="nameHelp" class="form-text">Use 2–50 characters.</div>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your name" aria-describedby="nameError nameGood" required minlength="2" maxlength="50">
+                                <div id="nameError" class="invalid-feedback">Enter a name with 2–50 characters.</div>
+                                <div id="nameGood" class="valid-feedback">Looks good!</div>
                             </div>
 
                             <div class="col-12 col-md-6">
                                 <label for="email" class="form-label fw-bold">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" aria-describedby="emailHelp" required maxlength="100">
-                                <div id="emailHelp" class="form-text">Enter a valid email address.</div>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" aria-describedby="emailError emailGood" required maxlength="100">
+                                <div id="emailError" class="invalid-feedback">Email is required. Enter a valid email address.</div>
+                                <div id="emailGood" class="valid-feedback">Looks good!</div>
                             </div>
 
                             <div class="col-12">
                                 <label for="message" class="form-label fw-bold">Message</label>
-                                <textarea id="message" name="message" class="form-control" rows="5" placeholder="Write your message here..." aria-describedby="messageHelp" required minlength="10" maxlength="500"></textarea>
-                                <div id="messageHelp" class="form-text">Use 10–500 characters.</div>
+                                <textarea id="message" name="message" class="form-control" rows="5" placeholder="Write your message here..." aria-describedby="messageError messageGood" required minlength="10" maxlength="500"></textarea>
+                                <div id="messageError" class="invalid-feedback">Enter a message with 10–500 characters.</div>
+                                <div id="messageGood" class="valid-feedback">Looks good!</div>
                             </div>
 
                             <div class="col-12">
-                                <button type="submit" class="btn btn-success w-100 py-2">Send message</button>
+                                <button type="submit" class="btn btn-success w-100 py-2">Submit</button>
                             </div>
                         </div>
                     </form>
-                </div>
+                </section>
 
             </div>
         </div>
