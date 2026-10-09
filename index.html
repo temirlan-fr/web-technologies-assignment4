@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 0 - Contact Form</title>
+    <title>Task 1 - HTML5 Validation</title>
 </head>
 <body>
-    <h1>Contact Form</h1>
+    <h1>Contact Form with Validation</h1>
 
     <form>
         <div>
             <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+            <br>
+            <small>Name must contain 2–50 characters.</small>
         </div>
 
         <br>
 
         <div>
             <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required maxlength="100">
         </div>
 
         <br>
 
         <div>
             <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" cols="30"></textarea>
+            <textarea id="message" name="message" rows="5" cols="30" required minlength="10" maxlength="500"></textarea>
+            <br>
+            <small>Message must contain 10–500 characters.</small>
         </div>
 
         <br>
